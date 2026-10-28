@@ -29,6 +29,7 @@ const coming = cards.flatMap((c) => (c.status === 'coming' ? [c] : []));
             <span class="card-name">{c.name}</span>
             <p class="card-sentence">{c.sentence}</p>
             <span class="status">{c.statusLabel}</span>
+            <span class="group">{c.groupTitle}</span>
           </li>
         ))}
       </ul>

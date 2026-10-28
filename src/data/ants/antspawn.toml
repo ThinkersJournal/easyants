@@ -1,7 +1,0 @@
-slug = "antspawn"
-name = "AntSpawn"
-order = 114
-status = "coming"
-status_label = "Name reserved, not released"
-sentence = "A sandboxed job runner: one job, one clean environment, then gone."
-home = "https://crates.io/crates/antspawn"

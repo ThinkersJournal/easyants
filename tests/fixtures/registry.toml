@@ -1,0 +1,46 @@
+# Fixture registry for the page tests (EASYANTS_FIXTURES=tests/fixtures): fake Ants, fake repositories.
+[[group]]
+id = "alpha"
+title = "Alpha group"
+
+[[group]]
+id = "beta"
+title = "Beta group"
+
+[[ant]]
+slug = "ready-ant"
+name = "ReadyAnt"
+group = "alpha"
+repo = "fixture-org/ready-ant"
+card = "required"
+
+[[ant]]
+slug = "second-ant"
+name = "SecondAnt"
+group = "beta"
+repo = "fixture-org/second-ant"
+card = "required"
+
+[[ant]]
+slug = "early-ant"
+name = "EarlyAnt"
+group = "alpha"
+repo = "fixture-org/early-ant"
+card = "required"
+
+[[ant]]
+slug = "pending-ant"
+name = "PendingAnt"
+group = "beta"
+repo = "fixture-org/pending-ant"
+card = "pending"
+sentence = "Has a repository but no card file yet."
+status_label = "Card not published yet"
+
+[[ant]]
+slug = "ghost-ant"
+name = "GhostAnt"
+group = "beta"
+card = "pending"
+sentence = "Has no public repository yet."
+status_label = "Name reserved, not released"

@@ -1,7 +1,0 @@
-slug = "redactant"
-name = "RedactAnt"
-order = 105
-status = "coming"
-status_label = "Name reserved, not released"
-sentence = "Redaction types and safe formatting, so secrets do not leak into logs."
-home = "https://crates.io/crates/redactant"
