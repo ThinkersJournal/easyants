@@ -1,0 +1,7 @@
+slug = "line-of-worker-ants"
+name = "LineOfWorkerAnts"
+order = 111
+status = "coming"
+status_label = "Name reserved, not released"
+sentence = "Durable lines and workers."
+home = "https://crates.io/crates/line-of-worker-ants"

@@ -1,0 +1,23 @@
+---
+import type { Card } from '../lib/card';
+interface Props { card: Extract<Card, { status: 'released' }> }
+const { card } = Astro.props;
+const { example } = card;
+const caption = `${example.excerpt ? 'Excerpt from ' : 'From '}${example.source}${example.tested ? '' : '; not run as shown'}`;
+---
+<li>
+  <details class="card" id={card.slug}>
+    <summary>
+      <span class="card-name">{card.name}</span>
+      <span class="card-sentence">{card.sentence}</span>
+    </summary>
+    <div class="card-body">
+      <pre tabindex="0" aria-label={`${card.name} example`}><code class={`language-${example.lang}`}>{example.code}</code></pre>
+      <p class="src">{caption}</p>
+      <p class="links">
+        <a href={card.install}>Install {card.name}</a>
+        <a href={card.home}>{card.name} project page</a>
+      </p>
+    </div>
+  </details>
+</li>

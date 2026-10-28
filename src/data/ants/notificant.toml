@@ -1,0 +1,7 @@
+slug = "notificant"
+name = "NotificAnt"
+order = 108
+status = "coming"
+status_label = "Name reserved, not released"
+sentence = "Notification policy on top of CommunicAnt."
+home = "https://crates.io/crates/notificant"

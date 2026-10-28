@@ -1,0 +1,18 @@
+slug = "configurant"
+name = "ConfigurAnt"
+order = 10
+status = "released"
+sentence = "Schema-first configuration: declare each value once, layer defaults, file, environment and command line, and explain where every value came from."
+home = "https://github.com/ThinkersJournal/configurant"
+install = "https://crates.io/crates/configurant"
+
+[example]
+lang = "shell"
+source = "README.md @ ThinkersJournal/configurant 368978b"
+tested = false
+excerpt = false
+code = '''
+configurant check   examples/configurant.toml
+configurant describe examples/configurant.toml
+DEMO_PORT=9000 configurant explain examples/configurant.toml server.port -- --port 9100
+'''

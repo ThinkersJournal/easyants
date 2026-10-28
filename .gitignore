@@ -1,1 +1,25 @@
 target/
+
+# Dependencies
+node_modules/
+
+# Astro / build output
+dist/
+.astro/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Env and secrets. Nothing in this repo needs a secret.
+.env
+.env.*
+!.env.example
+*.token
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log

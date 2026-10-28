@@ -1,0 +1,7 @@
+slug = "releaseant"
+name = "ReleaseAnt"
+order = 113
+status = "coming"
+status_label = "Name reserved, not released"
+sentence = "Ordered, verified, resumable publishing of Rust crates, with read-back."
+home = "https://crates.io/crates/releaseant"
