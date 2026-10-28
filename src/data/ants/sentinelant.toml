@@ -1,7 +1,0 @@
-slug = "sentinelant"
-name = "SentinelAnt"
-order = 107
-status = "coming"
-status_label = "Name reserved, not released"
-sentence = "Detection over events, such as repeated failed sign-ins."
-home = "https://crates.io/crates/sentinelant"

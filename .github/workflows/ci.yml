@@ -4,11 +4,13 @@ name: CI
 # check on its own (a job that dies early asserts nothing about its later steps):
 #
 #   1. Type check          -- `astro check`
-#   2. Build               -- `astro build`, the same build a static host runs
+#   2. Build               -- `astro build` from fixture repositories (no network)
 #   3. Playwright + axe    -- the full suite against `astro preview` of the built site: zero
 #                             script and strict CSP (tests/security.spec.ts), accessibility with
-#                             every card open (tests/a11y.spec.ts), the card format with a
-#                             negative control per rule (tests/card-format.spec.ts)
+#                             every card open (tests/a11y.spec.ts), the fetch and validation of
+#                             Ant sources with a negative control per rule (tests/hub.spec.ts)
+#
+# These gates never touch the real Ants. live-build.yml builds from their own repositories.
 #
 # This repository is public, so GitHub-hosted runners are free. Nothing here deploys and no job
 # uses a secret. The advisory portfolio job is not a required check.
@@ -71,8 +73,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: astro build
+      # Hermetic: the page is built from the fixture repositories in tests/fixtures. The live build,
+      # which reads every real Ant's own repository, is live-build.yml.
+      - name: astro build (fixtures)
         run: npm run build
+        env:
+          EASYANTS_FIXTURES: tests/fixtures
 
   test:
     name: Playwright + axe (${{ matrix.os }})

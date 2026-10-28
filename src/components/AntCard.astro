@@ -1,9 +1,9 @@
 ---
-import type { Card } from '../lib/card';
+import type { Card } from '../lib/load';
 interface Props { card: Extract<Card, { status: 'released' }> }
 const { card } = Astro.props;
 const { example } = card;
-const caption = `${example.excerpt ? 'Excerpt from ' : 'From '}${example.source}${example.tested ? '' : '; not run as shown'}`;
+const caption = `${example.excerpt ? 'Excerpt from ' : 'From '}${example.source}`;
 ---
 <li>
   <details class="card" id={card.slug}>
@@ -14,9 +14,10 @@ const caption = `${example.excerpt ? 'Excerpt from ' : 'From '}${example.source}
     <div class="card-body">
       <pre tabindex="0" aria-label={`${card.name} example`}><code class={`language-${example.lang}`}>{example.code}</code></pre>
       <p class="src">{caption}</p>
+      {card.installSnippet && <p class="snippet"><code>{card.installSnippet}</code></p>}
       <p class="links">
-        <a href={card.install}>Install {card.name}</a>
-        <a href={card.home}>{card.name} project page</a>
+        <a href={card.installUrl}>Install {card.name}</a>
+        <a href={card.docs}>{card.name} project page</a>
       </p>
     </div>
   </details>

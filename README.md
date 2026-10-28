@@ -9,13 +9,15 @@ A static, script-free page of collapsed cards (Astro, no JavaScript, strict CSP)
 opened, it shows a usage example of ten lines or fewer, an install link and a link to that Ant's own page. Released
 Ants get full cards; Ants that are still placeholders sit in a "coming" row with a status label and no example.
 
-Each card is one small file in `src/data/ants/`; the format, and which facts are still unverified, is in
-[docs/CARD-FORMAT.md](docs/CARD-FORMAT.md). Plan: [ROADMAP.md](ROADMAP.md).
+Every card is read from the Ant's own repository on each build (`easyants-card.toml` format: [docs/CARD-FORMAT.md](docs/CARD-FORMAT.md)); this
+hub keeps only the list of repositories and their grouping (`src/data/registry.toml`). A missing, invalid or unreachable
+source fails the build. Plan: [ROADMAP.md](ROADMAP.md).
 
 ```
 npm ci
 npm run dev        # local site
-npm test           # builds, previews, then runs Playwright: CSP and zero-script checks, axe, card format
+npm run build      # reads every Ant's own repository (needs the network)
+npm test           # builds from fixture repositories, then Playwright: CSP and zero-script, axe, source validation
 ```
 
 Licence: MIT OR Apache-2.0.

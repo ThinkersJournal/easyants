@@ -1,0 +1,57 @@
+name: Live build
+
+# Builds the page from every listed Ant's OWN repository (card file and the example file it names),
+# fetched fresh. Any missing, invalid or unreachable source fails this job; nothing falls back to an
+# earlier copy. Runs daily and on demand so a changed Ant shows within a day, and on every push to main.
+#
+# Nothing deploys yet (the domain is not wired). When it is, the deploy step goes after the build step in
+# this job, so a deploy only ever follows a build that read every Ant fresh.
+#
+# Not a pull_request job on purpose: an Ant's repository changing must not block an unrelated hub PR.
+# The same fetch and validation code is tested against fixtures in ci.yml.
+
+on:
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: live-build
+  cancel-in-progress: false
+
+jobs:
+  live:
+    name: Live build (every Ant's own repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node from .nvmrc
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # GITHUB_TOKEN only lifts the API rate limit for reading public repositories; it is sent to
+      # api.github.com and never to the raw host (tests/hub.spec.ts pins that).
+      - name: astro build (live)
+        run: npm run build
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Upload the built site
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: site
+          path: dist/
+          retention-days: 3

@@ -1,0 +1,6 @@
+name = "SecondAnt"
+sentence = "Does the second thing."
+status = "ready"
+install_url = "https://crates.io/crates/second-ant"
+docs = "https://example.com/second-ant"
+example_path = "examples/tiny.rs"

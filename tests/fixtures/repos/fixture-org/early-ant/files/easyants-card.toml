@@ -1,0 +1,4 @@
+name = "EarlyAnt"
+sentence = "Published, but not ready for use."
+status = "not-ready"
+status_label = "Early release, not ready"

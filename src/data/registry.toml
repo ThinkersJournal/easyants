@@ -1,0 +1,164 @@
+# The registry: the ONLY thing this hub keeps about the Ants (docs/CARD-FORMAT.md). It lists which repositories to
+# read and how they are grouped. A card's name, sentence, status, install and example all come from the Ant's own
+# `easyants-card.toml` and the tested example file it names, fetched on every build.
+#
+# card = "pending": the Ant does not carry the file yet, so it shows in the coming row with the sentence and status
+# written here. The build warns when the file appears, and the entry then becomes card = "required".
+# card = "required": the file must exist and be valid, or the build fails.
+# An Ant with no `repo` has no public repository yet; nothing is fetched for it.
+# The groups are a first proposal for CireSnave to rename or regroup.
+
+[[group]]
+id = "foundations"
+title = "Foundations"
+
+[[group]]
+id = "web"
+title = "Web and APIs"
+
+[[group]]
+id = "running"
+title = "Running and shipping"
+
+[[ant]]
+slug = "configurant"
+name = "ConfigurAnt"
+group = "foundations"
+repo = "ThinkersJournal/configurant"
+card = "pending"
+sentence = "Schema-first configuration: declare each value once, layer defaults, file, environment and command line, and explain where every value came from."
+status_label = "Released, card not published yet"
+
+[[ant]]
+slug = "persistant"
+name = "PersistAnt"
+group = "foundations"
+repo = "ciresnave/PersistAnt"
+card = "pending"
+sentence = "Store blobs and records by key, say which guarantees you need, and refuse a backend that cannot give them."
+status_label = "Released, card not published yet"
+
+[[ant]]
+slug = "capant"
+name = "CapAnt"
+group = "foundations"
+repo = "ThinkersJournal/capant"
+card = "pending"
+sentence = "Declare what you need in order of importance, and get back the providers that satisfy it, with evidence."
+status_label = "Early release, not ready"
+
+[[ant]]
+slug = "secretant"
+name = "SecretAnt"
+group = "foundations"
+repo = "ThinkersJournal/secretant"
+card = "pending"
+sentence = "One place to keep all of your secrets, with one interface for apps."
+status_label = "Name reserved, not released"
+
+[[ant]]
+slug = "redactant"
+name = "RedactAnt"
+group = "foundations"
+card = "pending"
+sentence = "Redaction types and safe formatting, so secrets do not leak into logs."
+status_label = "Name reserved, not released"
+
+[[ant]]
+slug = "auditant"
+name = "AuditAnt"
+group = "foundations"
+card = "pending"
+sentence = "Structured events and a tamper-evident audit trail."
+status_label = "Name reserved, not released"
+
+[[ant]]
+slug = "webhostant"
+name = "WebHostAnt"
+group = "web"
+repo = "ThinkersJournal/WebHostAnt"
+card = "pending"
+sentence = "Deploy a web app to common hosts, or serve it locally with automatic TLS."
+status_label = "Name reserved, not released"
+
+[[ant]]
+slug = "httpant"
+name = "HTTPAnt"
+group = "web"
+card = "pending"
+sentence = "Framework-agnostic HTTP, with a server half and a client half."
+status_label = "Name reserved, not released"
+
+[[ant]]
+slug = "apiant"
+name = "APIAnt"
+group = "web"
+card = "pending"
+sentence = "API scaffolding on top of HTTPAnt."
+status_label = "Name reserved, not released"
+
+[[ant]]
+slug = "communicant"
+name = "CommunicAnt"
+group = "running"
+card = "pending"
+sentence = "Communication channels, chosen by capability."
+status_label = "Name reserved, not released"
+
+[[ant]]
+slug = "notificant"
+name = "NotificAnt"
+group = "running"
+card = "pending"
+sentence = "Notification policy on top of CommunicAnt."
+status_label = "Name reserved, not released"
+
+[[ant]]
+slug = "sentinelant"
+name = "SentinelAnt"
+group = "running"
+card = "pending"
+sentence = "Detection over events, such as repeated failed sign-ins."
+status_label = "Name reserved, not released"
+
+[[ant]]
+slug = "schedulant"
+name = "SchedulAnt"
+group = "running"
+card = "pending"
+sentence = "A generic scheduling library."
+status_label = "Name reserved, not released"
+
+[[ant]]
+slug = "line-of-worker-ants"
+name = "LineOfWorkerAnts"
+group = "running"
+card = "pending"
+sentence = "Durable lines and workers."
+status_label = "Name reserved, not released"
+
+[[ant]]
+slug = "supervisorant"
+name = "SupervisorAnt"
+group = "running"
+card = "pending"
+sentence = "Process supervision."
+status_label = "Name reserved, not released"
+
+[[ant]]
+slug = "antspawn"
+name = "AntSpawn"
+group = "running"
+repo = "ThinkersJournal/antspawn"
+card = "pending"
+sentence = "A sandboxed job runner: one job, one clean environment, then gone."
+status_label = "Name reserved, not released"
+
+[[ant]]
+slug = "releaseant"
+name = "ReleaseAnt"
+group = "running"
+repo = "ThinkersJournal/releaseant"
+card = "pending"
+sentence = "Ordered, verified, resumable publishing of Rust crates, with read-back."
+status_label = "Name reserved, not released"

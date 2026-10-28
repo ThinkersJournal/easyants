@@ -1,0 +1,8 @@
+name = "ReadyAnt"
+sentence = "Does the ready thing in one line."
+status = "ready"
+install_url = "https://crates.io/crates/ready-ant"
+install_snippet = "cargo add ready-ant"
+docs = "https://example.com/ready-ant"
+example_path = "examples/hello.rs"
+example_lines = [3, 8]

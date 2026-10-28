@@ -1,11 +1,16 @@
-import { parseCard, sortCards, type Card } from './card';
+import { join } from 'node:path';
+import { readFileSync } from 'node:fs';
+import registryText from '../data/registry.toml?raw';
+import { parseRegistry } from './registry';
+import { loadCards } from './load';
+import { dirSource, githubSource } from './sources';
 
-// Every file in src/data/ants/ is one Ant's card. A file that breaks the format fails the build.
-const files = import.meta.glob('../data/ants/*.toml', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
+// EASYANTS_FIXTURES=<dir> reads <dir>/registry.toml and fixture repositories from <dir>/repos instead of
+// GitHub, so the page tests are hermetic. Without it the build reads every listed Ant's own repository.
+const fixtures = process.env.EASYANTS_FIXTURES;
+const registry = parseRegistry(fixtures ? readFileSync(join(fixtures, 'registry.toml'), 'utf8') : registryText);
+const source = fixtures ? dirSource(join(fixtures, 'repos')) : githubSource({ token: process.env.GITHUB_TOKEN });
 
-export const cards: Card[] = sortCards(Object.entries(files).map(([path, text]) => parseCard(text, path)));
-
-// Facts a card marks as unchecked, listed in the build log so they are never forgotten.
-for (const c of cards) {
-  if (c.unverified.length > 0) console.warn(`[easyants] ${c.slug}: unverified ${c.unverified.join(', ')} (docs/CARD-FORMAT.md)`);
-}
+export const { cards, warnings } = await loadCards(registry, source);
+for (const w of warnings) console.warn(`[easyants] ${w}`);
+console.log(`[easyants] ${cards.length} Ants from ${fixtures ? `fixtures in ${fixtures}` : 'their own repositories'}`);

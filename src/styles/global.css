@@ -60,4 +60,8 @@ pre:focus-visible{outline-offset:2px}
 .coming .card-name{font-size:16px}
 .status{display:inline-block;margin-top:6px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
 
+.group{display:block;margin-top:8px;font-size:12px;color:var(--muted)}
+.snippet{margin-bottom:12px}
+.snippet code{font-family:var(--mono);font-size:14px;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+
 footer.site{border-top:1px solid var(--line);margin-top:40px;padding:28px 0;color:var(--muted);font-size:14px}
