@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const RELEASED = ['ConfigurAnt', 'PersistAnt', 'CapAnt'];
+const RELEASED = ['ConfigurAnt', 'PersistAnt'];
 
 test('home has the catch line as its one h1 and a canonical on the apex', async ({ page }) => {
   await page.goto('/');
@@ -48,6 +48,10 @@ test('the coming row has a status label and no example for each unreleased Ant',
     await expect(li.locator('pre, details')).toHaveCount(0);
   }
   for (const name of RELEASED) await expect(items.filter({ hasText: name })).toHaveCount(0);
+  // CapAnt is published (0.0.7) but not ready for developer use: coming row, plain label, no example.
+  const capant = items.filter({ hasText: 'CapAnt' });
+  await expect(capant).toHaveCount(1);
+  await expect(capant.locator('.status')).toHaveText('Early release 0.0.7, not ready');
 });
 
 test('unknown route serves the branded 404', async ({ page }) => {

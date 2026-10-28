@@ -36,7 +36,7 @@ const bad = (text: string, file = 'demo.toml') => () => parseCard(text, file);
 test('every committed card file parses (control: there are files, and both statuses occur)', () => {
   expect(files.length).toBeGreaterThan(3);
   const cards = files.map((f) => parseCard(readFileSync(join(DIR, f), 'utf8'), f));
-  expect(cards.filter((c) => c.status === 'released').map((c) => c.slug).sort()).toEqual(['capant', 'configurant', 'persistant']);
+  expect(cards.filter((c) => c.status === 'released').map((c) => c.slug).sort()).toEqual(['configurant', 'persistant']);
   expect(cards.filter((c) => c.status === 'coming').length).toBeGreaterThan(0);
 });
 
@@ -75,7 +75,8 @@ test('cards sort by order, then name', () => {
   expect(sortCards([b, a]).map((c) => c.slug)).toEqual(['demo', 'soon']);
 });
 
-test('capant marks its released status as unverified (README says design phase, crates.io has 0.0.7)', () => {
+test('capant is a coming card with no example, by PM ruling (README says design phase)', () => {
   const capant = parseCard(readFileSync(join(DIR, 'capant.toml'), 'utf8'), 'capant.toml');
-  expect(capant.unverified).toEqual(['status']);
+  expect(capant.status).toBe('coming');
+  expect('example' in capant).toBe(false);
 });

@@ -1,6 +1,6 @@
 slug = "webhostant"
 name = "WebHostAnt"
-order = 101
+order = 102
 status = "coming"
 status_label = "Name reserved, not released"
 sentence = "Deploy a web app to common hosts, or serve it locally with automatic TLS."

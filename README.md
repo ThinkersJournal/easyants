@@ -1,6 +1,6 @@
 # EasyAnts
 
-The front door to the Ants: small Rust building blocks (ConfigurAnt, PersistAnt, CapAnt and more to come) that make
+The front door to the Ants: small Rust building blocks (ConfigurAnt and PersistAnt today, more to come) that make
 common jobs easy. Site: https://easyants.dev (domain registered 2026-10-28; not wired to a host yet).
 
 > Great software shouldn't be hard to build.

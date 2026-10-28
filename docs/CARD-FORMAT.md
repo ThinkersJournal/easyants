@@ -36,17 +36,26 @@ At most 10 lines (`MAX_EXAMPLE_LINES`), no `<script`. Fields: `lang`, `code`, `s
 An example is copied from the Ant's tested source, never written here. Roadmap row 2 replaces the copy with a build
 step that pulls it, so it cannot go stale; until then the `source` commit shows how old it is.
 
+## Who gets a full card
+
+Only an Ant whose README example passes a fresh-eyes read (PM ruling 2026-10-28, EXPECTATIONS 6.24). A published crate
+that is not ready for developer use is a coming card with a plain status label: `capant` is `Early release 0.0.7, not
+ready` (crates.io has 0.0.7, its README says design phase).
+
 ## Unverified facts
 
-A fact that could not be confirmed against a source is listed in `unverified` rather than left unmarked. Today:
+A fact that could not be confirmed against a source is listed in `unverified` rather than left unmarked. Today no card
+has one. Everything was read on 2026-10-28: crate names, descriptions and repository links from the crates.io API,
+examples from each repository at the commit named in `source`. Repository links for the coming Ants were not used
+because six of them did not resolve (HTTP 404), so those cards link to crates.io (CapAnt's repository is public and
+links there).
 
-- `capant.status`: crates.io has `capant` 0.0.7, the PM calls it released, and its README says "design phase".
+## Target (PM 2026-10-28)
 
-Everything else was read on 2026-10-28: crate names, descriptions and repository links from the crates.io API, examples
-from each repository at the commit named in `source`. Repository links for the coming Ants were not used because six of
-them did not resolve (HTTP 404), so those cards link to crates.io.
+The data files live in the hub for now. When a second Ant ships a tested README example, each card's data file moves
+into that Ant's own repository and the hub build pulls it, so the card and the Ant cannot drift apart.
 
 ## Adding an Ant
 
-Copy `capant.toml` (released) or `secretant.toml` (coming), change every field, run `npm test`. Moving an Ant from
+Copy `persistant.toml` (released) or `secretant.toml` (coming), change every field, run `npm test`. Moving an Ant from
 `coming` to `released` means adding `install` and `[example]`, removing `status_label`, and renumbering `order`.

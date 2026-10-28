@@ -1,6 +1,6 @@
 slug = "apiant"
 name = "APIAnt"
-order = 103
+order = 104
 status = "coming"
 status_label = "Name reserved, not released"
 sentence = "API scaffolding on top of HTTPAnt."

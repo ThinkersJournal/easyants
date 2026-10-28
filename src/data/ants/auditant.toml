@@ -1,6 +1,6 @@
 slug = "auditant"
 name = "AuditAnt"
-order = 105
+order = 106
 status = "coming"
 status_label = "Name reserved, not released"
 sentence = "Structured events and a tamper-evident audit trail."

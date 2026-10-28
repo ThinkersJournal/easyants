@@ -1,6 +1,6 @@
 slug = "schedulant"
 name = "SchedulAnt"
-order = 109
+order = 110
 status = "coming"
 status_label = "Name reserved, not released"
 sentence = "A generic scheduling library."

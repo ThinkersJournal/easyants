@@ -1,24 +1,7 @@
 slug = "capant"
 name = "CapAnt"
-order = 30
-status = "released"
+order = 100
+status = "coming"
+status_label = "Early release 0.0.7, not ready"
 sentence = "Declare what you need in order of importance, and get back the providers that satisfy it, with evidence."
 home = "https://github.com/ThinkersJournal/capant"
-install = "https://crates.io/crates/capant"
-unverified = ["status"]
-
-[example]
-lang = "rust"
-source = "src/lib.rs doc test @ ThinkersJournal/capant 2407187, lines for the providers table and context omitted"
-tested = false
-excerpt = true
-code = '''
-let id = |s: &str| CapabilityId::new(s).unwrap();
-let mut matrix = Matrix::new();
-matrix.push(
-    Row::capability(id("kv.get"), "mem", "1", State::Yes).evidence(Evidence::probe("kv::get")),
-);
-let eval = evaluate(&table, &Need::new(vec![id("kv.get")]), &matrix, &ctx).unwrap();
-assert_eq!(eval.satisfying().map(|e| e.provider.as_str()).collect::<Vec<_>>(), ["mem"]);
-assert!(eval.check("fs").is_err()); // `fs` has no row: unverified, not "probably yes"
-'''

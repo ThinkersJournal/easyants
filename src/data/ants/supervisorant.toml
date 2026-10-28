@@ -1,6 +1,6 @@
 slug = "supervisorant"
 name = "SupervisorAnt"
-order = 111
+order = 112
 status = "coming"
 status_label = "Name reserved, not released"
 sentence = "Process supervision."

@@ -1,6 +1,6 @@
 slug = "httpant"
 name = "HTTPAnt"
-order = 102
+order = 103
 status = "coming"
 status_label = "Name reserved, not released"
 sentence = "Framework-agnostic HTTP, with a server half and a client half."
