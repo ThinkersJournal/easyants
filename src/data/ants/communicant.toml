@@ -1,0 +1,7 @@
+slug = "communicant"
+name = "CommunicAnt"
+order = 108
+status = "coming"
+status_label = "Name reserved, not released"
+sentence = "Communication channels, chosen by capability."
+home = "https://crates.io/crates/communicant"

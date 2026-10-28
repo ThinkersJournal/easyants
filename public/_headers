@@ -1,0 +1,11 @@
+# Security headers for a static host that reads _headers (Cloudflare). Nothing is deployed yet.
+#
+# The CSP ENFORCES: the site ships no script at all and every stylesheet is a file
+# (astro.config.mjs), so 'self' is enough and nothing needs 'unsafe-inline'.
+# tests/security.spec.ts fails if the built HTML ever needs an inline script or style.
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
+  Content-Security-Policy: default-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data:; script-src 'self'; style-src 'self'; font-src 'self'; connect-src 'self'; form-action 'none'

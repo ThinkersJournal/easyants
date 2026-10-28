@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AntCard from '../components/AntCard.astro';
+import { SITE } from '../consts';
+import { cards } from '../lib/ants';
+
+const released = cards.flatMap((c) => (c.status === 'released' ? [c] : []));
+const coming = cards.flatMap((c) => (c.status === 'coming' ? [c] : []));
+---
+<BaseLayout>
+  <div class="wrap">
+    <div class="hero">
+      <h1>{SITE.catch}</h1>
+      <p class="lede">The Ants are small Rust building blocks that make common jobs easy. Open a card to see a short example.</p>
+    </div>
+
+    <section aria-labelledby="available">
+      <h2 id="available">Available now</h2>
+      <ul class="cards">
+        {released.map((card) => <AntCard card={card} />)}
+      </ul>
+    </section>
+
+    <section aria-labelledby="coming">
+      <h2 id="coming">Coming</h2>
+      <ul class="coming" data-testid="coming">
+        {coming.map((c) => (
+          <li>
+            <span class="card-name">{c.name}</span>
+            <p class="card-sentence">{c.sentence}</p>
+            <span class="status">{c.statusLabel}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </div>
+</BaseLayout>

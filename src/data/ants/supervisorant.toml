@@ -1,0 +1,7 @@
+slug = "supervisorant"
+name = "SupervisorAnt"
+order = 111
+status = "coming"
+status_label = "Name reserved, not released"
+sentence = "Process supervision."
+home = "https://crates.io/crates/supervisorant"

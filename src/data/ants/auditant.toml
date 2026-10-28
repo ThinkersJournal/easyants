@@ -1,0 +1,7 @@
+slug = "auditant"
+name = "AuditAnt"
+order = 105
+status = "coming"
+status_label = "Name reserved, not released"
+sentence = "Structured events and a tamper-evident audit trail."
+home = "https://crates.io/crates/auditant"

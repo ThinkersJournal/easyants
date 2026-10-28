@@ -1,0 +1,7 @@
+slug = "httpant"
+name = "HTTPAnt"
+order = 102
+status = "coming"
+status_label = "Name reserved, not released"
+sentence = "Framework-agnostic HTTP, with a server half and a client half."
+home = "https://crates.io/crates/httpant"
