@@ -3,6 +3,12 @@
 Versions follow the portfolio rule: every pushed change bumps the version; pre-1.0 the second number is the
 breaking-change number.
 
+## 0.1.2 - 2026-10-29
+
+Number provisional until the PM confirms at the gate.
+
+- CI: `.nvmrc` pins Node 22.23.4 (was `22`, which the Ubuntu runners resolved to 22.23.3, below Astro's minimum), and `engines.node` requires >=22.23.4. Type check and Build on Ubuntu failed on `main` for this reason.
+
 ## 0.1.1 - 2026-10-28
 
 Number provisional until the PM confirms at the gate.
