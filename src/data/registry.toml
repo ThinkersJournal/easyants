@@ -85,9 +85,8 @@ status_label = "Name reserved, not released"
 slug = "httpant"
 name = "HTTPAnt"
 group = "web"
-card = "pending"
-sentence = "Framework-agnostic HTTP, with a server half and a client half."
-status_label = "Name reserved, not released"
+repo = "ThinkersJournal/httpant"
+card = "required"
 
 [[ant]]
 slug = "apiant"

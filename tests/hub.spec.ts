@@ -48,10 +48,14 @@ const load = (repos: Record<string, Repo>, registry = REGISTRY) => loadCards(par
 const withCard = (card: string, extra: Record<string, string> = {}) => ({ 'o/demo': { ...goodRepo(), [CARD_FILE]: card, ...extra } });
 
 // ---- the real registry -------------------------------------------------------------------------------
-test('the real registry parses, and today every Ant is pending (control: it lists the Ants)', () => {
+test('the real registry parses; every Ant is pending except the ones named here, which are required with a repo (control: it lists the Ants)', () => {
   const reg = parseRegistry(readFileSync(join(process.cwd(), 'src', 'data', 'registry.toml'), 'utf8'));
   expect(reg.ants.length).toBeGreaterThanOrEqual(17);
-  expect(reg.ants.every((a) => a.card === 'pending')).toBe(true);
+  // Update this list in the same change that flips an entry to required (board 350 flipped httpant, 2026-10-31).
+  const required = reg.ants.filter((a) => a.card === 'required').map((a) => a.slug).sort();
+  expect(required).toEqual(['httpant']);
+  expect(reg.ants.filter((a) => a.card === 'required').every((a) => !!a.repo)).toBe(true);
+  expect(reg.ants.filter((a) => a.card !== 'required').every((a) => a.card === 'pending')).toBe(true);
   expect(reg.ants.filter((a) => a.repo).map((a) => a.slug)).toContain('configurant');
 });
 
