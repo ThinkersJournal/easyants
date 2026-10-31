@@ -87,7 +87,6 @@ name = "HTTPAnt"
 group = "web"
 repo = "ThinkersJournal/httpant"
 card = "required"
-sentence = "Framework-agnostic HTTP, with a server half and a client half."
 
 [[ant]]
 slug = "apiant"
