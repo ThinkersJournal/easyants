@@ -3,6 +3,10 @@
 Versions follow the portfolio rule: every pushed change bumps the version; pre-1.0 the second number is the
 breaking-change number.
 
+## 0.1.4 - 2026-11-03
+
+- Docs: `docs/AGENT-FILES-DESIGN.md`, the design note for generated and checked `llms.txt` and `SKILL.md` files (CireSnave 2026-11-03: "Agreed. It should be auto-generated so it stays up to date."). Design only.
+
 ## 0.1.3 - 2026-10-31
 
 - Registry: HTTPAnt is `card = "required"` with `repo = "ThinkersJournal/httpant"` (CireSnave 2026-10-31, board 350: A, flip it now). Its crates are on crates.io since 0.5.19; the card, the example and the install link are read from the Ant's own repo on every build, and the build fails if the card is missing or invalid.
