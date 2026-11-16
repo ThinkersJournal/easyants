@@ -3,6 +3,12 @@
 Versions follow the portfolio rule: every pushed change bumps the version; pre-1.0 the second number is the
 breaking-change number.
 
+## 0.1.5 - 2026-11-16
+
+CI only; number provisional until the PM stamps it at the gate (no version files touched).
+
+- CI workflow: the advisory CodeRipper `portfolio` job moves to the shared workflow at coderipper c72a6e0 (0.47.5). No `.coderipper.toml` or rule-name references here, so the rule-id migration changed nothing.
+
 ## 0.1.4 - 2026-11-03
 
 - Docs: `docs/AGENT-FILES-DESIGN.md`, the design note for generated and checked `llms.txt` and `SKILL.md` files (CireSnave 2026-11-03: "Agreed. It should be auto-generated so it stays up to date."). Design only.
