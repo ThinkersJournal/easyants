@@ -3,6 +3,10 @@
 Versions follow the portfolio rule: every pushed change bumps the version; pre-1.0 the second number is the
 breaking-change number.
 
+## 0.1.6 - 2026-11-19
+
+Registry rows 1-3 (src/data/registry.toml) and ROADMAP; data only. Number allocated by pm-assist.
+
 ## 0.1.5 - 2026-11-16
 
 CI only; number provisional until the PM stamps it at the gate (no version files touched).
