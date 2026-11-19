@@ -5,4 +5,5 @@
 2. Card data pulled from each Ant's own repository (CireSnave 2026-10-28): format, fetch, validation, fixtures, daily rebuild.
    DONE in the first PR (`docs/CARD-FORMAT.md`, `src/lib/`, `.github/workflows/live-build.yml`). Every Ant is `pending` until it adds `easyants-card.toml`.
 3. Ants add their card files: configurant and persistant first (PM asks them once the format merges); then flip each registry entry to `required`.
+   PARTLY DONE (2026-11-19): HTTPAnt, ConfigurAnt, PersistAnt and CapAnt carry `easyants-card.toml` and are `required` (live build passes, 17 Ants). Still `pending`, no card on the default branch: SecretAnt, WebHostAnt, AntSpawn, ReleaseAnt; the rest have no public repository yet.
 4. Point easyants.dev at the site (Cloudflare), staged per-Ant vanity domains redirect here; add the deploy step after the live build. Not started; the PM and CireSnave run any Cloudflare step.
