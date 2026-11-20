@@ -46,9 +46,7 @@ slug = "secretant"
 name = "SecretAnt"
 group = "foundations"
 repo = "ThinkersJournal/secretant"
-card = "pending"
-sentence = "One place to keep all of your secrets, with one interface for apps."
-status_label = "Name reserved, not released"
+card = "required"
 
 [[ant]]
 slug = "redactant"
