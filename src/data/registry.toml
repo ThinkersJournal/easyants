@@ -25,27 +25,21 @@ slug = "configurant"
 name = "ConfigurAnt"
 group = "foundations"
 repo = "ThinkersJournal/configurant"
-card = "pending"
-sentence = "Schema-first configuration: declare each value once, layer defaults, file, environment and command line, and explain where every value came from."
-status_label = "Released, card not published yet"
+card = "required"
 
 [[ant]]
 slug = "persistant"
 name = "PersistAnt"
 group = "foundations"
 repo = "ciresnave/PersistAnt"
-card = "pending"
-sentence = "Store blobs and records by key, say which guarantees you need, and refuse a backend that cannot give them."
-status_label = "Released, card not published yet"
+card = "required"
 
 [[ant]]
 slug = "capant"
 name = "CapAnt"
 group = "foundations"
 repo = "ThinkersJournal/capant"
-card = "pending"
-sentence = "Declare what you need in order of importance, and get back the providers that satisfy it, with evidence."
-status_label = "Early release, not ready"
+card = "required"
 
 [[ant]]
 slug = "secretant"
