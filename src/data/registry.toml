@@ -151,3 +151,10 @@ name = "ReleaseAnt"
 group = "running"
 repo = "ThinkersJournal/releaseant"
 card = "required"
+
+[[ant]]
+slug = "semanticant"
+name = "SemanticAnt"
+group = "foundations"
+repo = "ThinkersJournal/semanticant"
+card = "required"
