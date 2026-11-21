@@ -3,6 +3,10 @@
 Versions follow the portfolio rule: every pushed change bumps the version; pre-1.0 the second number is the
 breaking-change number.
 
+## 0.1.8 - 2026-11-21
+
+ReleaseAnt card = required; canonical Apache-2.0 LICENSE-APACHE. Number allocated by pm-assist.
+
 ## 0.1.7 - 2026-11-20
 
 SecretAnt card required (secretant 0.2.1 has the card); registry + hub test. Number allocated by pm-assist.
