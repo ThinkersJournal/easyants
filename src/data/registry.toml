@@ -69,9 +69,7 @@ slug = "webhostant"
 name = "WebHostAnt"
 group = "web"
 repo = "ThinkersJournal/WebHostAnt"
-card = "pending"
-sentence = "Deploy a web app to common hosts, or serve it locally with automatic TLS."
-status_label = "Name reserved, not released"
+card = "required"
 
 [[ant]]
 slug = "httpant"

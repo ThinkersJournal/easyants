@@ -53,7 +53,7 @@ test('the real registry parses; every Ant is pending except the ones named here,
   expect(reg.ants.length).toBeGreaterThanOrEqual(17);
   // Update this list in the same change that flips an entry to required (board 350 flipped httpant, 2026-10-31).
   const required = reg.ants.filter((a) => a.card === 'required').map((a) => a.slug).sort();
-  expect(required).toEqual(['capant', 'configurant', 'httpant', 'persistant', 'releaseant', 'secretant', 'semanticant']);
+  expect(required).toEqual(['capant', 'configurant', 'httpant', 'persistant', 'releaseant', 'secretant', 'semanticant', 'webhostant']);
   expect(reg.ants.filter((a) => a.card === 'required').every((a) => !!a.repo)).toBe(true);
   expect(reg.ants.filter((a) => a.card !== 'required').every((a) => a.card === 'pending')).toBe(true);
   expect(reg.ants.filter((a) => a.repo).map((a) => a.slug)).toContain('configurant');
