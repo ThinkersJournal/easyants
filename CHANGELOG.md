@@ -3,6 +3,8 @@
 Versions follow the portfolio rule: every pushed change bumps the version; pre-1.0 the second number is the
 breaking-change number.
 
+## 0.1.11 - 2026-11-26 (allocated by pm-assist; CI only: portfolio workflow pinned to coderipper 467fd259, 0.48.1; no code change; not breaking)
+
 ## 0.1.10 - 2026-11-25 (allocated by pm-assist)
 
 WebHostAnt hub entry: card set to required (easyants#12, supersedes #6); astro 7.4.7 lock rider.
