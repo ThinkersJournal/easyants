@@ -130,4 +130,4 @@ jobs:
     if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
     permissions:
       contents: read
-    uses: ciresnave/coderipper/.github/workflows/portfolio.yml@c72a6e03479d914de8ea8a73609ba73e93a0de92 # 0.47.5
+    uses: ciresnave/coderipper/.github/workflows/portfolio.yml@467fd259d6d062cba4c5683d310f1a6f2b66e763 # 0.48.1
